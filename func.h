@@ -28,9 +28,11 @@ void sortMatrixLine(int (* matt)[COLS],int line) ;
  *                    declarations & helpers                            *
  *                                                                      *
  ********************************************************************** */
-int mat1[ROWS][COLS], mat2[ROWS][COLS], resmat[ROWS][COLS], mau[ROWS][COLS];
+int mat1[ROWS][COLS], mat2[ROWS][COLS], resmat[ROWS][COLS];
 
 void printMatrix(int matrix[][COLS]) {
+
+    printf("[\n");
     int i, j;
     for(i=0; i<ROWS; i++) {
         for(j=0; j<COLS; j++) {
@@ -38,12 +40,14 @@ void printMatrix(int matrix[][COLS]) {
         }
         printf("\n");
     }
+    printf("]\n"
+           "");
 }
 
 void printMenu() {
     printf(" --------------------- Menu --------------------------------------------------------\n"
            " -----------------------------------------------------------------------------------\n");
-    printf("1) Create two 10x10 matrices Mat1,Mat2 using the next expression: for i,j Mat1[i][j] - (offset + i*10 + j) % 100\n");
+    printf("1) Create two 10x10 matrices Mat1,Mat2 using the next expression:\n for i,j Mat1[i][j] - (offset + i*10 + j) % 100\n");
     printf("2) Compute and show the matrix Mat1 + Mat2\n");
     printf("3) Compute and show the maximal Trace between matrices Matt and Mat1\n");
     printf("4) Compute and show the combined maximal matrix between Matu and Matt\n");
@@ -51,7 +55,7 @@ void printMenu() {
     printf("6) Sort a given line in a given matrix\n");
     printf("7) Show a given Matrix\n");
     printf("8) Show menu\n");
-    printf("9) Exit");
+    printf("9) Exit\n");
 }
 
 /************************************************************************
@@ -69,7 +73,6 @@ void createMatrices(int offset1,int offset2) {
             //mat4[i][j] = (offset + i*10 + j) % 100;
         }
     }
-    printf("\nMats created!\n");
 }
 
 /************************************************************************
@@ -86,7 +89,7 @@ void addAndPrintMats() {
             result[i][j] = mat1[i][j] + mat2[i][j];
         }
     }
-    printf("\nresMat = Mat1+Mat2 =\n");
+    printf("resMat = Mat1+Mat2 =\n");
     printMatrix(result);
 }
 /************************************************************************
@@ -104,7 +107,7 @@ void computeAndPrintMaximalTrace() {
         trace2 += mat2[i][i];
     }
 
-    trace1>trace2 ? printf("\nmat1 has the maximal Trace value: %d\n",trace1) : printf("\nmat2 has the maximal Trace value: %d\n",trace2);
+    trace1>trace2 ? printf("mat1 has the maximal Trace value: %d\n",trace1) : printf("mat2 has the maximal Trace value: %d\n",trace2);
 
 }
 /************************************************************************

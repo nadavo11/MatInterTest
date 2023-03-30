@@ -11,16 +11,16 @@ int main() {
     int q = 1;
     while (q) {
 
-        printf("\nChoose a menu clause number:");
+        printf("Choose a menu clause number:");
         scanf("%d", &choice);
         int mat, line;
 
         switch (choice) {
             case 1:
 
-                printf("\nInsert offset number in range 0-9 for Mat1 generation ");
+                printf("Insert offset number in range 0-9 for Mat1 generation\n ");
                 scanf("%d", &offset1);
-                printf("\nInsert offset number in range 0-9 for Mat2 generation ");
+                printf("Insert offset number in range 0-9 for Mat2 generation\n ");
                 scanf("%d", &offset2);
 
                 createMatrices(offset1,offset2);
@@ -35,7 +35,7 @@ int main() {
                 printCombinedMaxMatrix();
                 break;
             case 5:
-                printf("Insert the wanted matrix by its number identifier\n1: Mat1, 2: Mat2, 3: resMat 3");
+                printf("Insert the wanted matrix by its number identifier\n1: Mat1, 2: Mat2, 3: resMat");
                 scanf("%d", &mat);
 
                 if (mat == 1)
@@ -50,7 +50,7 @@ int main() {
                 printf("Insert the wanted matrix by its number identifier\n1: Mat1, 2: Mat2, 3: resMat");
                 scanf("%d", &mat);
 
-                printf("\nInsert matrix line number to sort in range 0-9 ");
+                printf("Insert matrix line number to sort in range 0-9\n");
                 scanf("%d", &line);
                 if (mat == 1)
                     sortMatrixLine(mat1, line);
@@ -67,20 +67,17 @@ int main() {
                 scanf("%d", &mat);
 
                 if (mat == 1){
-                    printf("Mat1 =\n[\n");
+                    printf("Mat1 =\n");
                     printMatrix(mat1);
-                    printf("]\n");
                 }
 
                 if (mat == 2) {
-                    printf("Mat2 =\n[\n");
+                    printf("Mat2 =\n");
                     printMatrix(mat2);
-                    printf("]\n");
                 }
                 if (mat == 3) {
-                    printf("resMat1 =\n[\n");
+                    printf("resMat =\n");
                     printMatrix(resmat);
-                    printf("]\n");
                 }
                 break;
 
